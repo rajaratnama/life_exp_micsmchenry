@@ -18,6 +18,8 @@ Here I re-examine the analysis of Oeppen and Vaupel (2002)
 
 -   Save`life_exp_analysis.qmd`.
 
+- Here is the code to organize the data for analysis.
+
 ```{r}
 sumdat <- gapminder_unfiltered |>
   group_by(year, country) |>
