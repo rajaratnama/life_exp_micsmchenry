@@ -7,6 +7,7 @@ editor: visual
 
 ```{r}
 library(tidyverse)
+library(gapminder)
 ```
 
 # Abstract
@@ -18,6 +19,12 @@ Here I re-examine the analysis of Oeppen and Vaupel (2002)
 -   Save`life_exp_analysis.qmd`.
 
 ```{r}
-
+sumdat <- gapminder_unfiltered |>
+  group_by(year, country) |>
+  summarize(lifeExp = max(lifeExp)) |>
+  ungroup() |>
+  group_by(year) |>
+  filter(lifeExp == max(lifeExp)) |>
+  ungroup()
 
 ```
