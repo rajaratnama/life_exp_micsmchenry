@@ -29,4 +29,13 @@ sumdat <- gapminder_unfiltered |>
   filter(lifeExp == max(lifeExp)) |>
   ungroup()
 
+ggplot(data = sumdat, aes(year, lifeExp)) +
+  geom_point(aes(color = country)) +
+  geom_smooth(method = "lm", formula = y ~ x, se = FALSE) +
+  scale_color_discrete(name = "country")+
+  labs(
+    x = "Year",
+    y = " Maximum Life Expectency"
+  ) +
+  theme_classic()
 ```
