@@ -39,3 +39,8 @@ ggplot(data = sumdat, aes(year, lifeExp)) +
   ) +
   theme_classic()
 ```
+
+# Text addition
+
+Added plot.
+Text added.
